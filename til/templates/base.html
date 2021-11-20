@@ -1,5 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
     <title>{% block title %}Title By Default{% endblock %}</title>
 </head>
+
 <body>
     <div class="min-h-screen flex flex-row bg-gray-100">
         <div class="flex flex-col w-64 bg-white rounded-r-3xl overflow-hidden">
@@ -32,14 +35,14 @@
                         <span class="text-sm text-blue-500 font-medium">Profile</span>
                     </a>
                 </li> -->
-                <!-- <li>
+                <li>
                     <a href="{% url 'feed:new_post' %}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200  hover:bg-black js-toggle-modal">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-green-400"><i
                                 class="bx bx-layer-plus"></i></span>
                         <span class="text-sm text-green-400 font-medium">Create Post</span>
                     </a>
-                </li> -->
+                </li>
                 <li>
                     <a href="{% url 'account_logout' %}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200  hover:bg-black">
@@ -63,12 +66,12 @@
 
         <div class="p-auto bg-gradient-to-r from-green-400 to-blue-500 w-full">
             {% block body %}
-                {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
             {% endblock %}
         </div>
 
         <!-- component -->
-        <!-- <div
+        <div
             class="flex items-center justify-center fixed left-0 bottom-0 w-full h-full bg-gray-600 opacity-80 js-modal hidden">
             <div class="bg-white rounded-lg w-1/2">
                 <div class="flex flex-col items-start p-7">
@@ -82,7 +85,8 @@
                     </div>
                     <hr>
                     <div class="w-full">
-                       
+                        <textarea class="border-2 border-blue-500 js-post-text w-full my-4" rows="3" maxlength="240"
+                            placeholder=" Make your Post" data-post-url="{% url 'feed:new_post' %}"></textarea>
                     </div>
                     <hr>
                     <div class="ml-auto">
@@ -97,7 +101,8 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 </body>
+
 </html>
