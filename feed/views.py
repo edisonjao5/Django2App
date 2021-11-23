@@ -57,7 +57,11 @@ class CreateNewPost(LoginRequiredMixin, CreateView):
             request,
             'includes/post.html',
             {'post': post,
+<<<<<<< HEAD
              'show_detail_link': True,
+=======
+             'show_detail_link': True
+>>>>>>> 63aa2160c61d1595d3ce915a07560b6fc23fb8de
             },
             content_type="application/html",
         )
