@@ -42,7 +42,7 @@ class CreateNewPost(LoginRequiredMixin, CreateView):
             request,
             'includes/post.html',
             {'post': post,
-             'show-detail-link': True
+             'show_detail_link': True
             },
             content_type="application/html",
         )
