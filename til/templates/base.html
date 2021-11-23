@@ -27,14 +27,14 @@
                     </a>
                 </li>
                 {% if request.user.is_authenticated %}
-                <!-- <li>
-                    <a href="{% url 'feed:update_profile' %}"
+                <li>
+                    <a href="{% url 'profiles:update' %}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 hover:bg-black">
                         <span class="inline-flex items-center justify-center h-12 w-12 text-lg text-blue-500"><i
                                 class="bx bx-user-pin"></i></span>
                         <span class="text-sm text-blue-500 font-medium">Profile</span>
                     </a>
-                </li> -->
+                </li>
                 <li>
                     <a href="{% url 'feed:new_post' %}"
                         class="flex flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200  hover:bg-black js-toggle-modal">

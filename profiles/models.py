@@ -10,7 +10,19 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         related_name='profile'
     )
-    image = ImageField(upload_to='profiles' )
+    SOCIAL = (
+        ('twitter', 'Twitter'),
+        ('facebook', 'Facebook'),
+        ('instagram', 'Instagram'),
+        ('youtube', 'Youtube'),
+        ('github', 'Github'),
+    )
+    First_Name = models.CharField(max_length=30)
+    Last_Name = models.CharField(max_length=30)
+    Username = models.CharField(max_length=30)
+    image = ImageField(upload_to='profiles')
+    Password = models.CharField(max_length=30)
+    Social = models.CharField(max_length=30, choices=SOCIAL)
 
     def __str__(self):
         return self.user.username
@@ -19,3 +31,7 @@ class Profile(models.Model):
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
+
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, **kwargs):
+    instance.profile.save()

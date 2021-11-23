@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Post(models.Model):
     text = models.CharField(max_length=240)
     date = models.DateTimeField(auto_now=True)
